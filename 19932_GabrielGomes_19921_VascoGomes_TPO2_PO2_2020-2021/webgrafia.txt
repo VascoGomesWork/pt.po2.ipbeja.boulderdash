@@ -1,0 +1,8 @@
+Como fazer um Array de Array de objetos em java - Consultado a 15/05/2021:
+
+https://cs.stackexchange.com/questions/46984/creating-arrays-of-object-of-abstract-class-in-statically-typed-object-oriented
+https://stackoverflow.com/questions/19310638/array-of-abstract-class
+
+Como saber se um objecto extends de uma determinada classe abstrata - COnsultado a 15/05/2021:
+
+https://stackoverflow.com/questions/16055118/how-to-check-if-a-class-extends-another
