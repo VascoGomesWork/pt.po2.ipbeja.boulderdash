@@ -6,6 +6,9 @@ package pt.ipbeja.po2.boulderdash.model;
  */
 public class Rock extends ImovableObjects {
 
+    public Rock(int line, int col) {
+        super(line, col);
+    }
 
     @Override
     public int hashCode() {
@@ -20,13 +23,8 @@ public class Rock extends ImovableObjects {
     }
 
     @Override
-    public boolean checkImmovableObjects(int line, int col, Object obj) {
-        return true;
-    }
-
-    @Override
-    public void moveObjectPositionGrid(int line, int col, Object obj) {
-
+    protected boolean isMovable() {
+        return false;
     }
 
 }

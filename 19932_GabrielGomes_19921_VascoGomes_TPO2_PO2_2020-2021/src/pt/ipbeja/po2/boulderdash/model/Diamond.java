@@ -11,6 +11,10 @@ public class Diamond extends MovableObjects {
     private int fallDirection;
     private int gravitySpeed;
 
+    public Diamond(int line, int col) {
+        super(line, col);
+    }
+
 
     @Override
     public int hashCode() {
@@ -25,16 +29,8 @@ public class Diamond extends MovableObjects {
     }
 
     @Override
-    public void moveObjectPositionGrid(int line, int col, Object obj) {
-        //Checks if it does not have another object already there
-        if (gameModel.checkObjectPositionGrid(line, col, obj) || checkMovableObjects(line, col, obj)) {
-            //If it is free then moves
-            gameModel.insertObjectPositionGrid(line, col, obj);
-        }
+    protected boolean isMovable() {
+        return true;
     }
 
-    @Override
-    public boolean checkMovableObjects(int line, int col, Object obj) {
-        return false;
-    }
 }

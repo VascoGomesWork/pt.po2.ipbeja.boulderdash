@@ -5,6 +5,10 @@ package pt.ipbeja.po2.boulderdash.model;
  * @date 15/05/2021
  */
 public class Wall extends ImovableObjects {
+    public Wall(int line, int col) {
+        super(line, col);
+    }
+
     @Override
     public int hashCode() {
         return 0;
@@ -19,12 +23,7 @@ public class Wall extends ImovableObjects {
     }
 
     @Override
-    public boolean checkImmovableObjects(int line, int col, Object obj) {
-        return true;
-    }
-
-    @Override
-    public void moveObjectPositionGrid(int line, int col, Object obj) {
-
+    protected boolean isMovable() {
+        return false;
     }
 }

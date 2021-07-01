@@ -9,6 +9,15 @@ public abstract class AbstractPosition {
     private int line;
     private int col;
 
+    public AbstractPosition(int line, int col) {
+        this.line = line;
+        this.col = col;
+    }
+
+    public void setLine(int line){ this.line = line; }
+
+    public void setCol(int col) {this.col = col; }
+
     public int getLine() {
         return this.line;
     }
@@ -22,4 +31,6 @@ public abstract class AbstractPosition {
 
     @Override
     public abstract boolean equals(Object o);
+
+    protected abstract boolean isMovable();
 }

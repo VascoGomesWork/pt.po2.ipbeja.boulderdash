@@ -9,9 +9,16 @@ public class GameModel {
     private AbstractPosition[][] grid;
     private MovableObjects movableObjects;
     private ImovableObjects imovableObjects;
+    private Rockford rockford;
+    private int nLine;
+    private int nCol;
 
     public GameModel(AbstractPosition[][] grid) {
         this.grid = grid;
+        this.nLine = grid.length; //Gets the number lines
+        System.out.println("N Lines = " + this.nLine);
+        this.nCol = grid[0].length; //Gets the number of cols
+        System.out.println("N Col = " + this.nCol);
     }
 
     /**
@@ -24,6 +31,10 @@ public class GameModel {
         this.grid[line][col] = (AbstractPosition) obj;
     }
 
+    public Rockford getRockford() {
+        return rockford;
+    }
+
     public Boolean checkObjectPositionGrid(int line, int col, Object obj){
         if (this.grid[line][col].equals(obj)) {
                 return true;
@@ -31,16 +42,13 @@ public class GameModel {
         return false;
     }
 
-    //Perguntar se os movimentos do rockford devem estar na class rockford
-    public void moveObjectPositionGrid(int line, int col, Object obj){
-
-        //Checks if there is a movable object in the position
-        if(obj.equals(movableObjects)){
-            //If it is free then moves
-            insertObjectPositionGrid(line, col, obj);
-        }
-
-        System.out.println(obj.equals(movableObjects));
+    public int getNumLines() {
+        System.out.println("Num Lines Function = " + this.nLine);
+        return this.nLine;
     }
 
+    public int getNumCol(){
+        System.out.println("Num cols Function = " + this.nCol);
+        return this.nCol;
+    }
 }

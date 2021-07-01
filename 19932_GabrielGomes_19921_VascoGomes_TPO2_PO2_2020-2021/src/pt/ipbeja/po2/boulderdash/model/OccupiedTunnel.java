@@ -5,6 +5,10 @@ package pt.ipbeja.po2.boulderdash.model;
  * @date 15/05/2021
  */
 public class OccupiedTunnel extends ImovableObjects {
+    public OccupiedTunnel(int line, int col) {
+        super(line, col);
+    }
+
     @Override
     public int hashCode() {
         return 0;
@@ -18,13 +22,8 @@ public class OccupiedTunnel extends ImovableObjects {
     }
 
     @Override
-    public boolean checkImmovableObjects(int line, int col, Object obj) {
-        return false;
-    }
-
-    @Override
-    public void moveObjectPositionGrid(int line, int col, Object obj) {
-
+    protected boolean isMovable() {
+        return true;
     }
 
 }

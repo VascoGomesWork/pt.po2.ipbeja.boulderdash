@@ -4,19 +4,15 @@ package pt.ipbeja.po2.boulderdash.model;
  * @author Vasco Gomes 19921
  * @date 15/05/2021
  */
-public abstract class ImovableObjects extends AbstractPosition implements ObjectType{
+public abstract class ImovableObjects extends AbstractPosition{
 
-    private final static int objectType = 1;
+    //private final static int objectType = 1;
 
-    public ImovableObjects() {
-        super();
+    public ImovableObjects(int line, int col) {
+        super(line, col);
     }
 
-    public abstract boolean checkImmovableObjects(int line, int col, Object obj);
-
-    public abstract void moveObjectPositionGrid(int line, int col, Object obj);
-
-    public int getObjectType() {
+    /*public int getObjectType() {
         return this.objectType;
-    }
+    }*/
 }
