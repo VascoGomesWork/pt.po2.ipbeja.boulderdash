@@ -139,12 +139,12 @@ public class GameModelTest {
     }
 
     @Test
-    void test5GameWithoutMovableObjects() {
+    void test5RockfordDiamond() {
         
     }
 
     @Test
-    void test6KeyboardCommands() {
+    void test6RockfordPassesGate() {
         System.out.println();
     }
 }
