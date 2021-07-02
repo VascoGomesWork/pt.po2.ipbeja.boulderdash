@@ -145,6 +145,6 @@ public class GameModelTest {
 
     @Test
     void test6KeyboardCommands() {
-        
+        System.out.println();
     }
 }
