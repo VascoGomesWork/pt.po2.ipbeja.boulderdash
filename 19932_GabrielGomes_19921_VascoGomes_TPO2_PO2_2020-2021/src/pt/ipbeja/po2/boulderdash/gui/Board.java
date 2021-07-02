@@ -12,11 +12,11 @@ import pt.ipbeja.po2.boulderdash.model.GameModel;
  */
 public class Board extends VBox {
 
-    private static final int SIZE = 3;
+    private static final int SIZE = 10;
     private Button exitButton;
     private BoulderDashButton[][] boardButtons;
     //Array de Array de Objetos da classe AbstractPosition
-    AbstractPosition [][] grid = new AbstractPosition[10][10];
+    AbstractPosition [][] grid = new AbstractPosition[SIZE][SIZE];
     GameModel model;
 
     public Board() {
@@ -31,16 +31,18 @@ public class Board extends VBox {
 
         this.boardButtons = new BoulderDashButton[SIZE][SIZE];
         GridPane gridPane = this.createBoard();
-        this.getChildren().addAll(exitButton);
+        this.getChildren().addAll(gridPane, exitButton);
     }
 
     private GridPane createBoard() {
         GridPane gridPane = new GridPane();
         for (int line = 0; line < SIZE; line++) {
             for (int col = 0; col < SIZE; col++) {
-
+                BoulderDashButton boulderDashButton = new BoulderDashButton();
+                gridPane.add(boulderDashButton, col, line);
+                boardButtons[line][col] = boulderDashButton;
             }
         }
-        return null;
+        return gridPane;
     }
 }
