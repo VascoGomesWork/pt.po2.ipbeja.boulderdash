@@ -37,4 +37,6 @@ public abstract class AbstractPosition {
     protected abstract boolean hasScore();
 
     protected abstract int getScore();
+
+    protected abstract boolean isGate(AbstractPosition[][] grid, int line, int col);
 }

@@ -16,6 +16,11 @@ public class Rockford extends MovableObjects {
         this.score = 0;
     }
 
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+
 
     public void moveObjectPositionGrid(int line, int col, AbstractPosition[][] grid, GameModel gameModel) {
         //Checks if it is inside of bouderies
@@ -24,6 +29,17 @@ public class Rockford extends MovableObjects {
                 if(grid[line][col].hasScore()){
                     addsScore(grid, line, col);
                 }
+
+                //Check if the Rockford moved to the gate
+                if(grid[line][col].hasScore()){
+                    addsScore(grid, line, col);
+                }
+
+                //Check if position is a gate
+                if (grid[line][col].isGate(grid, line, col)){
+                    System.out.println("Rockford passed the gate! Game finished!");
+                }
+
                 //Gets the rockford position before moving
                 //Updates the grid positions and the freeTunnel positions
                 grid[this.getLine()][this.getCol()] = new FreeTunnel(this.getLine(), this.getCol());
@@ -60,11 +76,6 @@ public class Rockford extends MovableObjects {
     }
 
     @Override
-    public int hashCode() {
-        return 0;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Rockford)) return false;
@@ -73,5 +84,10 @@ public class Rockford extends MovableObjects {
 
     public int getScore() {
         return this.score;
+    }
+
+    @Override
+    protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
+        return false;
     }
 }

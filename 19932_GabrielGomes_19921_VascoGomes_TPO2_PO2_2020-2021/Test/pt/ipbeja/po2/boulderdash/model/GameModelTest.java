@@ -52,6 +52,7 @@ public class GameModelTest {
         Rockford rockford = new Rockford(0, 1);
         FreeTunnel freeTunnel = new FreeTunnel(0, 2);
         Wall wall1 = new Wall(0, 3);
+        Gate gate = new Gate(0, 5);
 
         //Inserts the objects in the grid
         gameModel.insertObjectPositionGrid(0,0, wall);
@@ -64,6 +65,7 @@ public class GameModelTest {
         assertEquals(true, gameModel.checkObjectPositionGrid(0, 1, rockford));
         assertEquals(true, gameModel.checkObjectPositionGrid(0, 2, freeTunnel));
         assertEquals(true, gameModel.checkObjectPositionGrid(0, 3, wall1));
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 3, gate));
 
         //Moves Rockford to the Free Tunnel and the space where Rockford was becomes a Free Tunnel
         rockford.moveObjectPositionGrid(0, 0, grid, gameModel);
@@ -145,6 +147,26 @@ public class GameModelTest {
 
     @Test
     void test6RockfordPassesGate() {
-        System.out.println();
+        //Array de Array de Objetos da classe AbstractPosition
+        AbstractPosition [][] grid = new AbstractPosition[1][4];
+        GameModel gameModel = new GameModel(grid);
+
+        //Creates the objects to be inserted in the grid
+        Rockford rockford = new Rockford(0, 1);
+        Gate gate = new Gate(0, 2);
+
+        //Inserts the objects in the grid
+        gameModel.insertObjectPositionGrid(0,1, rockford);
+        gameModel.insertObjectPositionGrid(0,2, gate);
+
+        //Check if those are correct
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 1, rockford));
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 2, gate));
+
+        //Moves Rockford to the Free Tunnel and the space where Rockford was becomes a Free Tunnel
+        rockford.moveObjectPositionGrid(0, 2, grid, gameModel);
+
+        //Check if the movement has been done
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 2, rockford));
     }
 }
