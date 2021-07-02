@@ -10,6 +10,6 @@ import javafx.stage.Stage;
 public class BoulderDashStart extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
+        System.out.println("TESTE");
     }
 }
