@@ -35,6 +35,12 @@ public class Board extends VBox {
     }
 
     private GridPane createBoard() {
+        GridPane gridPane = new GridPane();
+        for (int line = 0; line < SIZE; line++) {
+            for (int col = 0; col < SIZE; col++) {
+
+            }
+        }
         return null;
     }
 }
