@@ -13,6 +13,16 @@ public class Gate extends MovableObjects {
     }
 
     @Override
+    protected boolean hasScore() {
+        return true;
+    }
+
+    @Override
+    protected int getScore() {
+        return 0;
+    }
+
+    @Override
     public int hashCode() {
         return 0;
     }

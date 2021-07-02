@@ -107,7 +107,44 @@ public class GameModelTest {
 
     @Test
     void test4MakeRockfordCatchDiamond() {
+        //Array de Array de Objetos da classe AbstractPosition
+        AbstractPosition [][] grid = new AbstractPosition[1][4];
+        GameModel gameModel = new GameModel(grid);
 
+        //Creates the objects to be inserted in the grid
+        Wall wall = new Wall(0, 0);
+        Rockford rockford = new Rockford(0, 1);
+        Diamond diamond = new Diamond(0, 2, 10);
+        Rock rock = new Rock(0, 3);
+
+        //Inserts the objects in the grid
+        gameModel.insertObjectPositionGrid(0,0, wall);
+        gameModel.insertObjectPositionGrid(0,1, rockford);
+        gameModel.insertObjectPositionGrid(0,2, diamond);
+        gameModel.insertObjectPositionGrid(0,3, rock);
+
+        //Check if those are correct
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 0, wall));
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 1, rockford));
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 2, diamond));
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 3, rock));
+
+        //Moves Rockford to the Free Tunnel and the space where Rockford was becomes a Free Tunnel
+        rockford.moveObjectPositionGrid(0, 2, grid, gameModel);
+
+        //Check if the movement has been done
+        assertEquals(true, gameModel.checkObjectPositionGrid(0, 2, rockford));
+        //Check if the score has rised
+        assertEquals(10, rockford.getScore());
+    }
+
+    @Test
+    void test5GameWithoutMovableObjects() {
+        
+    }
+
+    @Test
+    void test6KeyboardCommands() {
         
     }
 }

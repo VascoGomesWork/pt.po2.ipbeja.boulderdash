@@ -33,4 +33,8 @@ public abstract class AbstractPosition {
     public abstract boolean equals(Object o);
 
     protected abstract boolean isMovable();
+
+    protected abstract boolean hasScore();
+
+    protected abstract int getScore();
 }

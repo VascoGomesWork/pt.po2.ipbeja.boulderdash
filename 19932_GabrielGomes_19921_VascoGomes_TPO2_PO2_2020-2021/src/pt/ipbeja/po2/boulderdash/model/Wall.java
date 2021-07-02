@@ -26,4 +26,14 @@ public class Wall extends ImovableObjects {
     protected boolean isMovable() {
         return false;
     }
+
+    @Override
+    protected boolean hasScore() {
+        return false;
+    }
+
+    @Override
+    protected int getScore() {
+        return 0;
+    }
 }

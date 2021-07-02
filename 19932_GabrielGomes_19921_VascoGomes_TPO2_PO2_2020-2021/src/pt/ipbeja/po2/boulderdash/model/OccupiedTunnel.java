@@ -26,4 +26,14 @@ public class OccupiedTunnel extends ImovableObjects {
         return true;
     }
 
+    @Override
+    protected boolean hasScore() {
+        return false;
+    }
+
+    @Override
+    protected int getScore() {
+        return 0;
+    }
+
 }

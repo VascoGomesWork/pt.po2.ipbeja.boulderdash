@@ -8,11 +8,18 @@ public class Diamond extends MovableObjects {
 
     private GameModel gameModel;
     private int time;
+    private int score;
     private int fallDirection;
     private int gravitySpeed;
 
-    public Diamond(int line, int col) {
+    public Diamond(int line, int col, int score) {
         super(line, col);
+        this.score = score;
+    }
+
+    @Override
+    protected boolean hasScore() {
+        return true;
     }
 
 
@@ -31,6 +38,10 @@ public class Diamond extends MovableObjects {
     @Override
     protected boolean isMovable() {
         return true;
+    }
+
+    public int getScore(){
+        return this.score;
     }
 
 }

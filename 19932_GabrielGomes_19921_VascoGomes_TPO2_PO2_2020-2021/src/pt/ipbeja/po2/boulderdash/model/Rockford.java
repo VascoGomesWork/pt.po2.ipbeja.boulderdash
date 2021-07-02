@@ -7,6 +7,7 @@ package pt.ipbeja.po2.boulderdash.model;
 public class Rockford extends MovableObjects {
     private static Rockford instance = null;
     AbstractPosition abstractPosition;
+    MovableObjects movableObjects;
     private GameModel gameModel;
     private int score = 0;
 
@@ -20,6 +21,9 @@ public class Rockford extends MovableObjects {
         //Checks if it is inside of bouderies
         if (line <= gameModel.getNumLines() && col <= gameModel.getNumCol()) {
             if (grid[line][col].isMovable()) {
+                if(grid[line][col].hasScore()){
+                    addsScore(grid, line, col);
+                }
                 //Gets the rockford position before moving
                 //Updates the grid positions and the freeTunnel positions
                 grid[this.getLine()][this.getCol()] = new FreeTunnel(this.getLine(), this.getCol());
@@ -33,8 +37,18 @@ public class Rockford extends MovableObjects {
         }
     }
 
+    private void addsScore(AbstractPosition[][] grid, int line, int col) {
+        System.out.println("Object in position = " + grid[line][col] + " score = " + grid[line][col].getScore());
+        this.score += grid[line][col].getScore();
+    }
+
     @Override
     protected boolean isMovable() {
+        return true;
+    }
+
+    @Override
+    protected boolean hasScore() {
         return true;
     }
 
@@ -57,4 +71,7 @@ public class Rockford extends MovableObjects {
         return false;
     }
 
+    public int getScore() {
+        return this.score;
+    }
 }
