@@ -8,6 +8,9 @@ import pt.ipbeja.po2.boulderdash.model.GameModel;
  * @date 15/05/2021
  */
 public class Board {
+    //UM TESTE
+
+
 
     //Array de Array de Objetos da classe AbstractPosition
     AbstractPosition [][] grid = new AbstractPosition[10][10];
