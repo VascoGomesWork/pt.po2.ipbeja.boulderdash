@@ -23,6 +23,12 @@ public class Gate extends MovableObjects {
     }
 
     @Override
+    protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
+        return true;
+    }
+
+
+    @Override
     public int hashCode() {
         return 0;
     }

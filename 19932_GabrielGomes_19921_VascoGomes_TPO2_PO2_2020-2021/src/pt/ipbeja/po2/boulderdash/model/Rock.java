@@ -37,4 +37,9 @@ public class Rock extends ImovableObjects {
         return 0;
     }
 
+    @Override
+    protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
+        return false;
+    }
+
 }

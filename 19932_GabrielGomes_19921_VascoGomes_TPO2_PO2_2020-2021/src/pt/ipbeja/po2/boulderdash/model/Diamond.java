@@ -44,4 +44,9 @@ public class Diamond extends MovableObjects {
         return this.score;
     }
 
+    @Override
+    protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
+        return false;
+    }
+
 }
