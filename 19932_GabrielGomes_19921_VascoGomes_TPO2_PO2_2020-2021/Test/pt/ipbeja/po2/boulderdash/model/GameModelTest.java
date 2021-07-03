@@ -142,7 +142,43 @@ public class GameModelTest {
 
     @Test
     void test5RockfordDiamond() {
-        
+        //Array de Array de Objetos da classe AbstractPosition
+        AbstractPosition [][] grid = new AbstractPosition[6][2];
+        GameModel gameModel = new GameModel(grid);
+
+        //Creates the objects to be inserted in the grid
+        Rockford rockford = new Rockford(2, 0);
+        Diamond diamond = new Diamond(1, 1, 10);
+        FreeTunnel freeTunnel1 = new FreeTunnel(2, 1);
+        FreeTunnel freeTunnel2 = new FreeTunnel(3, 1);
+        FreeTunnel freeTunnel3 = new FreeTunnel(4, 1);
+        FreeTunnel freeTunnel4 = new FreeTunnel(5, 1);
+
+
+        //Inserts the objects in the grid
+        gameModel.insertObjectPositionGrid(2,0, rockford);
+        gameModel.insertObjectPositionGrid(1,1, diamond);
+        gameModel.insertObjectPositionGrid(2,1, freeTunnel1);
+        gameModel.insertObjectPositionGrid(3,1, freeTunnel2);
+        gameModel.insertObjectPositionGrid(4,1, freeTunnel3);
+        gameModel.insertObjectPositionGrid(5,1, freeTunnel4);
+
+
+        //Check if those are correct
+        assertEquals(true, gameModel.checkObjectPositionGrid(2, 0, rockford));
+        assertEquals(true, gameModel.checkObjectPositionGrid(1, 1, diamond));
+        assertEquals(true, gameModel.checkObjectPositionGrid(2, 1, freeTunnel1));
+        assertEquals(true, gameModel.checkObjectPositionGrid(3, 1, freeTunnel2));
+        assertEquals(true, gameModel.checkObjectPositionGrid(4, 1, freeTunnel3));
+        assertEquals(true, gameModel.checkObjectPositionGrid(5, 1, freeTunnel4));
+
+        rockford.moveObjectPositionGrid(2, 1, grid, gameModel);
+        assertEquals(true, gameModel.checkObjectPositionGrid(2, 1, rockford));
+
+        rockford.moveObjectPositionGrid(2, 0, grid, gameModel);
+        assertEquals(true, gameModel.checkObjectPositionGrid(2, 0, rockford));
+
+        assertEquals(true, gameModel.checkObjectPositionGrid(2, 1, diamond));
     }
 
     @Test
