@@ -50,14 +50,6 @@ public class Diamond extends MovableObjects {
         return true;
     }
 
-    protected void moveDiamondUnder(int diamondAtualLine, int diamondAtualCol) {
-        Diamond diamond = new Diamond(diamondAtualLine + 1, diamondAtualCol, 10);
-        FreeTunnel freeTunnel = new FreeTunnel(diamondAtualLine, diamondAtualCol);
-
-        gameModel.insertObjectPositionGrid(diamondAtualLine + 1,1, diamond);
-        gameModel.insertObjectPositionGrid(diamondAtualLine, diamondAtualCol, freeTunnel);
-    }
-
     public int getScore(){
         return this.score;
     }
@@ -65,6 +57,13 @@ public class Diamond extends MovableObjects {
     @Override
     protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
         return false;
+    }
+
+    protected void moveObjectUnder(int diamondAtualLine, int diamondAtualCol) {
+        FreeTunnel freeTunnel = new FreeTunnel(diamondAtualLine, diamondAtualCol);
+
+        gameModel.insertObjectPositionGrid(diamondAtualLine + 1,1, this);
+        gameModel.insertObjectPositionGrid(diamondAtualLine, diamondAtualCol, freeTunnel);
     }
 
 }

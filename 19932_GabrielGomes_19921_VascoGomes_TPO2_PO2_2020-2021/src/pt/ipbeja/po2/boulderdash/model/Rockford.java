@@ -6,7 +6,7 @@ import com.sun.xml.internal.bind.v2.TODO;
  * @author Vasco Gomes 19921
  * @date 15/05/2021
  */
-public class Rockford extends MovableObjects {
+public class Rockford extends AbstractPosition {
     private static Rockford instance = null;
     AbstractPosition abstractPosition;
     MovableObjects movableObjects;
@@ -48,6 +48,7 @@ public class Rockford extends MovableObjects {
                     if (grid[(line - 1)][col].isMovable()) {
                         System.out.println("Move the diamond");
                         //TODO: Call diamond method make it fall
+                        movableObjects.moveObjectUnder(line, col);
                     }
                 }
 

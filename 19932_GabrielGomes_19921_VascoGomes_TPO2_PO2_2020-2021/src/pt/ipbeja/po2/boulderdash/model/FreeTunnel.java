@@ -25,7 +25,7 @@ public class FreeTunnel extends RockfordMovableObject {
 
     @Override
     protected boolean isMovable() {
-        return false;
+        return true;
     }
 
     @Override

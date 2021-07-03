@@ -155,7 +155,6 @@ public class GameModelTest {
         FreeTunnel freeTunnel3 = new FreeTunnel(4, 1);
         FreeTunnel freeTunnel4 = new FreeTunnel(5, 1);
 
-
         //Inserts the objects in the grid
         gameModel.insertObjectPositionGrid(1,0, freeTunnel);
         gameModel.insertObjectPositionGrid(2,0, rockford);
@@ -165,7 +164,6 @@ public class GameModelTest {
         gameModel.insertObjectPositionGrid(3,1, freeTunnel2);
         gameModel.insertObjectPositionGrid(4,1, freeTunnel3);
         gameModel.insertObjectPositionGrid(5,1, freeTunnel4);
-
 
         //Check if those are correct
         assertEquals(true, gameModel.checkObjectPositionGrid(1, 0, freeTunnel));
