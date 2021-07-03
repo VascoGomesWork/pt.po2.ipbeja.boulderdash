@@ -50,6 +50,14 @@ public class Diamond extends MovableObjects {
         return false;
     }
 
+    protected void moveDiamondUnder(int diamondAtualLine, int diamondAtualCol) {
+        Diamond diamond = new Diamond(diamondAtualLine + 1, diamondAtualCol, 10);
+        FreeTunnel freeTunnel = new FreeTunnel(diamondAtualLine, diamondAtualCol);
+
+        gameModel.insertObjectPositionGrid(diamondAtualLine + 1,1, diamond);
+        gameModel.insertObjectPositionGrid(diamondAtualLine, diamondAtualCol, freeTunnel);
+    }
+
     public int getScore(){
         return this.score;
     }
