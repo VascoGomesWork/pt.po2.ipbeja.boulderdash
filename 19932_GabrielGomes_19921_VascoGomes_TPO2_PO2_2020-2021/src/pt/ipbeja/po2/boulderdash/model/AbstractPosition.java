@@ -43,4 +43,6 @@ public abstract class AbstractPosition {
     protected abstract int getScore();
 
     protected abstract boolean isGate(AbstractPosition[][] grid, int line, int col);
+
+    protected abstract void moveObjectUnder(int line, int col);
 }

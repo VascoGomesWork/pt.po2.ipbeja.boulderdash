@@ -43,12 +43,13 @@ public class Rockford extends AbstractPosition {
                 System.out.println("Col = " + col);
 
                 //Check if the position (line - 1) exists
-                if(gameModel.positionExists((line - 1), col)/*grid[(line - 1)].exists()*/) {
+                //It only matters to verify the lines because the objects only fall on the vertical
+                if((gameModel.positionExists((line - 1), col)) || gameModel.positionExists((line + 1), col)) {
                     //Check if Rockford moved to the position under the diamond
-                    if (grid[(line - 1)][col].isMovable()) {
+                    if((grid[(line - 1)][col].isMovable()) || (grid[(line + 1)][col].isMovable())) {
                         System.out.println("Move the diamond");
                         //TODO: Call diamond method make it fall
-                        movableObjects.moveObjectUnder(line, col);
+                        grid[line - 1][col].moveObjectUnder(line, col);
                     }
                 }
 
@@ -111,5 +112,10 @@ public class Rockford extends AbstractPosition {
     @Override
     protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
         return false;
+    }
+
+    @Override
+    protected void moveObjectUnder(int line, int col) {
+
     }
 }

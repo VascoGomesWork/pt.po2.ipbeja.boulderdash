@@ -27,6 +27,11 @@ public class Gate extends RockfordMovableObject {
         return true;
     }
 
+    @Override
+    protected void moveObjectUnder(int line, int col) {
+
+    }
+
 
     @Override
     public int hashCode() {

@@ -19,5 +19,5 @@ public abstract class MovableObjects extends AbstractPosition{
         return false;
     }*/
 
-    protected abstract void moveObjectUnder(int diamondAtualLine, int diamondAtualCol);
+    //protected abstract void moveObjectUnder(int diamondAtualLine, int diamondAtualCol);
 }

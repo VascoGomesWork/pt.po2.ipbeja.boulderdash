@@ -51,4 +51,9 @@ public class OccupiedTunnel extends RockfordMovableObject {
         return false;
     }
 
+    @Override
+    protected void moveObjectUnder(int line, int col) {
+
+    }
+
 }

@@ -53,4 +53,9 @@ public class FreeTunnel extends RockfordMovableObject {
         return false;
     }
 
+    @Override
+    protected void moveObjectUnder(int line, int col) {
+
+    }
+
 }

@@ -51,4 +51,9 @@ public class Wall extends ImovableObjects {
     protected boolean isGate(AbstractPosition[][] grid, int line, int col) {
         return false;
     }
+
+    @Override
+    protected void moveObjectUnder(int line, int col) {
+
+    }
 }
