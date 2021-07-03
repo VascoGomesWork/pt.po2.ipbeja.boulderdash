@@ -27,7 +27,7 @@ public class Rockford extends MovableObjects {
     public void moveObjectPositionGrid(int line, int col, AbstractPosition[][] grid, GameModel gameModel) {
         //Checks if it is inside of bouderies
         if (line <= gameModel.getNumLines() && col <= gameModel.getNumCol()) {
-            if (grid[line][col].isMovable()) {
+            if (grid[line][col].isRockfordMovableTo()) {
                 if(grid[line][col].hasScore()){
                     addsScore(grid, line, col);
                 }
@@ -42,10 +42,16 @@ public class Rockford extends MovableObjects {
                     System.out.println("Rockford passed the gate! Game finished!");
                 }
 
-                //Check if Rockford moved to the position under the diamond
-                if(grid[line - 1][col].isMovable()){
-                    System.out.println("Move the diamond");
-                    //TODO: Call diamond method make it fall
+                System.out.println("Line = " + (line - 1));
+                System.out.println("Col = " + col);
+
+                //Check if the position (line - 1) exists
+                if(grid[(line - 1)].exists()) {
+                    //Check if Rockford moved to the position under the diamond
+                    if (grid[(line - 1)][col].isMovable()) {
+                        System.out.println("Move the diamond");
+                        //TODO: Call diamond method make it fall
+                    }
                 }
 
                 //Gets the rockford position before moving
@@ -69,6 +75,16 @@ public class Rockford extends MovableObjects {
     @Override
     protected boolean isMovable() {
         return true;
+    }
+
+    @Override
+    protected boolean isDiamond() {
+        return false;
+    }
+
+    @Override
+    protected boolean isRockfordMovableTo() {
+        return false;
     }
 
     @Override

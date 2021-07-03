@@ -39,7 +39,7 @@ public class Board extends VBox {
             //this.model.exit();
         });
 
-        this.openItem.setOnAction(event -> readFile(primaryStage));
+        //this.openItem.setOnAction(event -> readFile(primaryStage));
 
         this.boardButtons = new BoulderDashButton[SIZE][SIZE];
         GridPane gridPane = this.createBoard();

@@ -4,7 +4,7 @@ package pt.ipbeja.po2.boulderdash.model;
  * @author Vasco Gomes 19921
  * @date 15/05/2021
  */
-public class OccupiedTunnel extends ImovableObjects {
+public class OccupiedTunnel extends RockfordMovableObject {
     public OccupiedTunnel(int line, int col) {
         super(line, col);
     }
@@ -23,6 +23,16 @@ public class OccupiedTunnel extends ImovableObjects {
 
     @Override
     protected boolean isMovable() {
+        return true;
+    }
+
+    @Override
+    protected boolean isDiamond() {
+        return false;
+    }
+
+    @Override
+    protected boolean isRockfordMovableTo() {
         return true;
     }
 

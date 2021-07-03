@@ -34,6 +34,10 @@ public abstract class AbstractPosition {
 
     protected abstract boolean isMovable();
 
+    protected abstract boolean isDiamond();
+
+    protected abstract boolean isRockfordMovableTo();
+
     protected abstract boolean hasScore();
 
     protected abstract int getScore();

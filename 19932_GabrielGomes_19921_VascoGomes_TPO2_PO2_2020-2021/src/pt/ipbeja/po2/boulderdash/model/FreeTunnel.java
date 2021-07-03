@@ -4,7 +4,7 @@ package pt.ipbeja.po2.boulderdash.model;
  * @author Vasco Gomes 19921
  * @date 15/05/2021
  */
-public class FreeTunnel extends ImovableObjects {
+public class FreeTunnel extends RockfordMovableObject {
 
 
     public FreeTunnel(int line, int col) {
@@ -25,6 +25,16 @@ public class FreeTunnel extends ImovableObjects {
 
     @Override
     protected boolean isMovable() {
+        return false;
+    }
+
+    @Override
+    protected boolean isDiamond() {
+        return false;
+    }
+
+    @Override
+    protected boolean isRockfordMovableTo() {
         return true;
     }
 

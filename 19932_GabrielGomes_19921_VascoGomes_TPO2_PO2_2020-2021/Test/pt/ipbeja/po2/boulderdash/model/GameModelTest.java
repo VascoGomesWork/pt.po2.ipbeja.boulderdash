@@ -146,6 +146,7 @@ public class GameModelTest {
         GameModel gameModel = new GameModel(grid);
 
         //Creates the objects to be inserted in the grid
+        FreeTunnel freeTunnel = new FreeTunnel(1, 0);
         Rockford rockford = new Rockford(2, 0);
         Diamond diamond = new Diamond(1, 1, 10);
         //Wall wall = new Wall(1, 1);
@@ -156,6 +157,7 @@ public class GameModelTest {
 
 
         //Inserts the objects in the grid
+        gameModel.insertObjectPositionGrid(1,0, freeTunnel);
         gameModel.insertObjectPositionGrid(2,0, rockford);
         gameModel.insertObjectPositionGrid(1,1, diamond);
         //gameModel.insertObjectPositionGrid(1,1, wall);
@@ -166,6 +168,7 @@ public class GameModelTest {
 
 
         //Check if those are correct
+        assertEquals(true, gameModel.checkObjectPositionGrid(1, 0, freeTunnel));
         assertEquals(true, gameModel.checkObjectPositionGrid(2, 0, rockford));
         assertEquals(true, gameModel.checkObjectPositionGrid(1, 1, diamond));
         //assertEquals(true, gameModel.checkObjectPositionGrid(1, 1, wall));

@@ -40,6 +40,16 @@ public class Diamond extends MovableObjects {
         return true;
     }
 
+    @Override
+    protected boolean isDiamond() {
+        return true;
+    }
+
+    @Override
+    protected boolean isRockfordMovableTo() {
+        return false;
+    }
+
     public int getScore(){
         return this.score;
     }

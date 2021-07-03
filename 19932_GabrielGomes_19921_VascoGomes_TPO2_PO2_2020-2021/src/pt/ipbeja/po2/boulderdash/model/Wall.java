@@ -28,6 +28,16 @@ public class Wall extends ImovableObjects {
     }
 
     @Override
+    protected boolean isDiamond() {
+        return false;
+    }
+
+    @Override
+    protected boolean isRockfordMovableTo() {
+        return false;
+    }
+
+    @Override
     protected boolean hasScore() {
         return false;
     }

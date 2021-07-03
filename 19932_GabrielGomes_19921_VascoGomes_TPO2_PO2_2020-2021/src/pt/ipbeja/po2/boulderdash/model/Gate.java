@@ -45,4 +45,14 @@ public class Gate extends MovableObjects {
         return true;
     }
 
+    @Override
+    protected boolean isDiamond() {
+        return false;
+    }
+
+    @Override
+    protected boolean isRockfordMovableTo() {
+        return false;
+    }
+
 }
