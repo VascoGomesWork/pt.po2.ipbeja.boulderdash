@@ -65,7 +65,6 @@ public class GameModelTest {
         assertEquals(true, gameModel.checkObjectPositionGrid(0, 1, rockford));
         assertEquals(true, gameModel.checkObjectPositionGrid(0, 2, freeTunnel));
         assertEquals(true, gameModel.checkObjectPositionGrid(0, 3, wall1));
-        assertEquals(true, gameModel.checkObjectPositionGrid(0, 3, gate));
 
         //Moves Rockford to the Free Tunnel and the space where Rockford was becomes a Free Tunnel
         rockford.moveObjectPositionGrid(0, 0, grid, gameModel);
@@ -149,6 +148,7 @@ public class GameModelTest {
         //Creates the objects to be inserted in the grid
         Rockford rockford = new Rockford(2, 0);
         Diamond diamond = new Diamond(1, 1, 10);
+        //Wall wall = new Wall(1, 1);
         FreeTunnel freeTunnel1 = new FreeTunnel(2, 1);
         FreeTunnel freeTunnel2 = new FreeTunnel(3, 1);
         FreeTunnel freeTunnel3 = new FreeTunnel(4, 1);
@@ -158,6 +158,7 @@ public class GameModelTest {
         //Inserts the objects in the grid
         gameModel.insertObjectPositionGrid(2,0, rockford);
         gameModel.insertObjectPositionGrid(1,1, diamond);
+        //gameModel.insertObjectPositionGrid(1,1, wall);
         gameModel.insertObjectPositionGrid(2,1, freeTunnel1);
         gameModel.insertObjectPositionGrid(3,1, freeTunnel2);
         gameModel.insertObjectPositionGrid(4,1, freeTunnel3);
@@ -167,6 +168,7 @@ public class GameModelTest {
         //Check if those are correct
         assertEquals(true, gameModel.checkObjectPositionGrid(2, 0, rockford));
         assertEquals(true, gameModel.checkObjectPositionGrid(1, 1, diamond));
+        //assertEquals(true, gameModel.checkObjectPositionGrid(1, 1, wall));
         assertEquals(true, gameModel.checkObjectPositionGrid(2, 1, freeTunnel1));
         assertEquals(true, gameModel.checkObjectPositionGrid(3, 1, freeTunnel2));
         assertEquals(true, gameModel.checkObjectPositionGrid(4, 1, freeTunnel3));
