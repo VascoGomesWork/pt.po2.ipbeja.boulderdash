@@ -14,7 +14,7 @@ public class BoulderDashButton extends Button {
     private ImageView imageView;
 
     public BoulderDashButton() {
-        this.imageView = new ImageView(new Image("/res/wall.JPG"));
+        this.imageView = new ImageView(new Image("/res/freeTunnel.JPG"));
         this.setGraphic(this.imageView);
     }
 }
