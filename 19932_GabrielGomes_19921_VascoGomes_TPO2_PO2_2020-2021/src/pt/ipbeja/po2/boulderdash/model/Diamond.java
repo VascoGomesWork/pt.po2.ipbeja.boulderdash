@@ -47,7 +47,7 @@ public class Diamond extends MovableObjects {
 
     @Override
     protected boolean isRockfordMovableTo() {
-        return false;
+        return true;
     }
 
     protected void moveDiamondUnder(int diamondAtualLine, int diamondAtualCol) {

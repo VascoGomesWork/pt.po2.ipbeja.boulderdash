@@ -51,4 +51,15 @@ public class GameModel {
         System.out.println("Num cols Function = " + this.nCol);
         return this.nCol;
     }
+
+    public boolean positionExists(int line, int col) {
+        for (int i = 0; i < nLine; i++) {
+            for (int j = 0; j < nCol; j++) {
+                if(line == i && col == j){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
